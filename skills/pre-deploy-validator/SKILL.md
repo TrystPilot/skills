@@ -185,6 +185,30 @@ Create a `.pre-deploy-config.json` in your repository root:
 - `2`: Configuration error
 - `3`: Check skipped or not applicable
 
+## TrystPilot Skill Ecosystem Integration
+
+Pre Deploy Validator is the quality gate in the TrystPilot deployment pipeline. This skill ensures code safety, security, and readiness across all contributions:
+
+**Upstream (Input)**:
+- **ascii-mockup** (PR #49) — Validate generated design tokens and components
+- **skill-creator** (#47) — Validate skill implementations before deployment
+- **ux-journey-mapper** (PR #50) — Validate journey map exports
+
+**Peer Tools**:
+- **project-status-tool** (PR #TBD) — Track validation status in project health metrics
+- **mermaid-terminal** (PR #TBD) — Visualize validation results and architecture
+
+**Downstream (Output)**:
+- Production deployment gates on passing validation
+- Status reports for stakeholders
+
+**Complete Quality Pipeline**:
+```
+design/code → pre-deploy-validator → status-tracking → deployment
+```
+
+Use this skill before merging any contributions to ensure code quality, security, and completeness standards are met. See PR #47 for the full ecosystem overview.
+
 ## Related Skills
 
 - `skill-creator`: Create and validate new skills
