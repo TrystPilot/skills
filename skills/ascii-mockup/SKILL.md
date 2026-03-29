@@ -607,3 +607,21 @@ If the user's request has gaps or anti-patterns, provide brief feedback:
 - **Hardcoded fonts**: "Avoid embedding fonts as local files — Google Fonts CDN reduces load time and benefits from shared browser caching."
 - **Touch target too small**: "Buttons at 32px fail WCAG 2.5.5 (Target Size) on touch devices — minimum 44×44px recommended."
 - **Single breakpoint request**: "Designing only for desktop leaves ~50% of users underserved — generating all 5 breakpoints for a complete responsive system."
+
+---
+
+## TrystPilot Skill Ecosystem Integration
+
+ASCII Mockup is the design-to-code bridge in the TrystPilot contribution ecosystem. This skill chains seamlessly with:
+
+**Upstream (Input)**:
+- **ux-journey-mapper** (PR #TBD) — Journey maps inform layout and flow decisions
+
+**Peer Tools**:
+- **skill-creator** (#47) — Improve and refine this and other skills
+
+**Downstream (Output)**:
+- **frontend-design** — Receives `tokens.json` and `tokens.css` to build production code
+- **theme-factory** (PR #TBD) — Apply design tokens to presentations and themes
+
+This skill is engineered to drive a complete design system workflow: map user journeys → create wireframes + tokens → generate production code → apply theming. See PR #47 for the full ecosystem overview.
