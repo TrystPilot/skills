@@ -176,6 +176,7 @@ def main():
     else:
         print("No data to analyze")
         sys.exit(1)
+        return None
 
 if __name__ == '__main__':
     main()
