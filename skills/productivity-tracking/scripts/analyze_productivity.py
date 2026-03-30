@@ -32,8 +32,10 @@ def load_reviews(file_path):
 
 def calculate_metrics(reviews, days_to_analyze=None):
     """Calculate aggregate metrics from reviews."""
-    if days_to_analyze:
-        cutoff_date = datetime.now().date() - timedelta(days=days_to_analyze)
+    if days_to_analyze and reviews:
+        # Get the latest date from reviews and calculate back from there
+        latest_date = max(datetime.fromisoformat(r.get('date', '1900-01-01')).date() for r in reviews)
+        cutoff_date = latest_date - timedelta(days=days_to_analyze-1)
         reviews = [r for r in reviews if datetime.fromisoformat(r.get('date', '')).date() >= cutoff_date]
 
     if not reviews:
