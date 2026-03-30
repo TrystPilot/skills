@@ -13,7 +13,6 @@ import json
 import sys
 from datetime import datetime, timedelta
 from collections import defaultdict
-from pathlib import Path
 
 def load_reviews(file_path):
     """Load reviews from JSON file."""
