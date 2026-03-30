@@ -89,7 +89,7 @@ def calculate_metrics(reviews, days_to_analyze=None):
         metrics['metrics']['avg_interruptions'] = round(total_interruptions / completed_days, 1)
         metrics['metrics']['avg_energy'] = round(total_energy / completed_days, 1)
         metrics['metrics']['avg_stress'] = round(total_stress / completed_days, 1)
-        metrics['metrics']['completion_rate'] = round((total_tasks / (completed_days * 5)) * 100, 1) if completed_days > 0 else 0
+        metrics['metrics']['completion_rate'] = round((total_tasks / (completed_days * 5)) * 100, 1)
 
     return metrics
 
