@@ -1,37 +1,38 @@
 /**
  * Tests for PreDeployValidator
+ * Run with: node test.js
  */
 
-const PreDeployValidator = require('./index.js');
+const PreDeployValidator = require('./index');
 
 let passed = 0;
 let failed = 0;
 
 function assert(condition, message) {
   if (condition) {
-    console.log(`  ✓ ${message}`);
+    console.log(`  ✅ ${message}`);
     passed++;
   } else {
-    console.error(`  ✗ ${message}`);
+    console.error(`  ❌ FAIL: ${message}`);
     failed++;
   }
 }
 
-async function runTests() {
+async function run() {
   console.log('Running PreDeployValidator tests...\n');
 
-  // Test 1: Constructor defaults
-  console.log('Test: Constructor defaults');
-  const validator = new PreDeployValidator();
-  assert(validator.config.checkCodeQuality === true, 'checkCodeQuality defaults to true');
-  assert(validator.config.checkSecurity === true, 'checkSecurity defaults to true');
-  assert(validator.config.checkTests === true, 'checkTests defaults to true');
-  assert(validator.config.checkDependencies === true, 'checkDependencies defaults to true');
-  assert(validator.config.checkDocumentation === true, 'checkDocumentation defaults to true');
-  assert(validator.config.failOnWarnings === false, 'failOnWarnings defaults to false');
+  // ── Constructor defaults ──────────────────────────────────────────────────
+  console.log('Constructor defaults');
+  const v = new PreDeployValidator();
+  assert(v.config.checkCodeQuality === true,  'checkCodeQuality defaults to true');
+  assert(v.config.checkSecurity === true,     'checkSecurity defaults to true');
+  assert(v.config.checkTests === true,        'checkTests defaults to true');
+  assert(v.config.checkDependencies === true, 'checkDependencies defaults to true');
+  assert(v.config.checkDocumentation === true,'checkDocumentation defaults to true');
+  assert(v.config.failOnWarnings === false,   'failOnWarnings defaults to false');
 
-  // Test 2: Constructor with config overrides
-  console.log('\nTest: Constructor config overrides');
+  // ── Constructor overrides ─────────────────────────────────────────────────
+  console.log('\nConstructor overrides');
   const v2 = new PreDeployValidator({ checkSecurity: false, failOnWarnings: true });
   assert(v2.config.checkSecurity === false, 'checkSecurity can be disabled');
   assert(v2.config.failOnWarnings === true, 'failOnWarnings can be set');
@@ -58,14 +59,30 @@ async function runTests() {
   assert(typeof report.success === 'boolean', 'report.success is boolean');
   assert(typeof report.results === 'object', 'report.results is object');
 
-  console.log(`\n${passed} passed, ${failed} failed`);
+  // ── generateReport — failure path ────────────────────────────────────────
+  console.log('\ngenerateReport (failure)');
+  const vFail = new PreDeployValidator();
+  vFail.results.failures = ['something broke'];
+  const failReport = vFail.generateReport();
+  assert(failReport.success === false, 'success=false when failures present');
+
+  // ── generateReport — error path ──────────────────────────────────────────
+  console.log('\ngenerateReport (error)');
+  const vErr = new PreDeployValidator();
+  vErr.results.errors = ['unexpected crash'];
+  const errReport = vErr.generateReport();
+  assert(errReport.success === false, 'success=false when errors present');
+
+  // ── Summary ───────────────────────────────────────────────────────────────
+  console.log(`\n${'─'.repeat(40)}`);
+  console.log(`Results: ${passed} passed, ${failed} failed`);
 
   if (failed > 0) {
     process.exit(1);
   }
 }
 
-runTests().catch(err => {
+run().catch(err => {
   console.error('Test runner error:', err);
   process.exit(1);
 });
