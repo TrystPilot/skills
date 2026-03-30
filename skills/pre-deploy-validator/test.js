@@ -53,7 +53,7 @@ async function runTests() {
 
   // Test 5: validate returns report with success property
   console.log('\nTest: validate returns report');
-  const v5 = new PreDeployValidator({ checkDependencies: false });
+  const v5 = new PreDeployValidator({ checkDependencies: false, checkTests: false });
   const report = await v5.validate();
   assert(typeof report.success === 'boolean', 'report.success is boolean');
   assert(typeof report.results === 'object', 'report.results is object');
