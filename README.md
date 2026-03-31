@@ -37,6 +37,7 @@ Many skills in this repo are open source (Apache 2.0). We've also included the d
 | [frontend-design](./skills/frontend-design) | Production-grade web UIs: pages, components, dashboards, and HTML artifacts |
 | [slack-gif-creator](./skills/slack-gif-creator) | Animated GIFs optimized for Slack with constraint validation and animation utilities |
 | [theme-factory](./skills/theme-factory) | Apply or generate themes (colors, fonts) across slides, docs, and HTML artifacts |
+| [underworld-biographer](./skills/underworld-biographer) | Detailed character profiles, mythologies, and narrative worlds for underworld-themed stories — character foundations, underworld integration, and narrative architecture |
 
 ### Development & Technical
 | Skill | Description |

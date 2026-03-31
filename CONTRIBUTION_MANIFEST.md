@@ -1,4 +1,4 @@
-# Contribution Manifest: 6 Skills for Anthropic's Skills Repository
+# Contribution Manifest: 7 Skills for Anthropic's Skills Repository
 
 **Date**: March 2026
 **Source**: TrystPilot/skills (Private Repository)
@@ -7,9 +7,9 @@
 
 ## Overview
 
-This manifest documents 6 production-ready skills being contributed to Anthropic's public skills repository. These skills represent best practices across creative, technical, and development domains, following the Agent Skills specification (https://agentskills.io/specification).
+This manifest documents 7 production-ready skills being contributed to Anthropic's public skills repository. These skills represent best practices across creative, technical, and development domains, following the Agent Skills specification (https://agentskills.io/specification).
 
-## The 6 Skills
+## The 7 Skills
 
 ### 1. **canvas-design**
 - **Purpose**: Create beautiful visual art in PNG and PDF documents using design philosophy
@@ -138,10 +138,24 @@ This manifest documents 6 production-ready skills being contributed to Anthropic
 - **License**: MIT
 - **Publication**: Designed for npm publication as `@anthropic-community/pre-deploy-validator`
 
+### 7. **underworld-biographer**
+- **Purpose**: Create detailed character profiles, mythologies, and narrative worlds focused on underworld themes
+- **Key Features**:
+  - Three-phase structured process: Character Foundation → Underworld Integration → Narrative Architecture
+  - Comprehensive character profiling system
+  - Mythological framework development
+  - Narrative interconnection mapping
+  - Support for complex character relationships and hierarchies
+- **File Structure**:
+  - `SKILL.md` - Main skill instructions with three-phase methodology
+  - `LICENSE.txt` - Apache 2.0 license
+- **Use Cases**: Character development, world-building, narrative depth, underworld-themed storytelling, character motivation establishment
+- **License**: Apache 2.0
+
 ## Contribution Details
 
 ### Spec Compliance
-All 6 skills comply with the Agent Skills specification:
+All 7 skills comply with the Agent Skills specification:
 - ✅ SKILL.md files with required YAML frontmatter (name, description)
 - ✅ LICENSE files with appropriate open-source licenses (Apache 2.0 or MIT)
 - ✅ Self-contained folder structures
