@@ -403,3 +403,16 @@ This skill includes helpful templates and documentation:
 - The **algorithm is where to create** something unique
 - Don't copy the flow field example - build what the philosophy demands
 - But DO keep the exact UI structure and Anthropic branding from the template
+
+---
+
+## TrystPilot Skill Ecosystem Integration
+
+Algorithmic Art is part of the TrystPilot open-source contribution suite. This skill generates computational aesthetics that can enhance design systems and token specifications created by our other tools:
+
+- **ascii-mockup** — Generates ASCII mockups and design tokens (PR #TBD)
+- **ux-journey-mapper** — Creates journey maps that can be enhanced with algorithmic visualizations (PR #TBD)
+- **skill-creator** — Use to create and improve this and other skills (PR #47)
+- **theme-factory** — Apply algorithmic color palettes to themes and docs (PR #TBD)
+
+Generated artwork can serve as aesthetic foundations for brand systems, design tokens, and interactive experiences across the TrystPilot ecosystem.
