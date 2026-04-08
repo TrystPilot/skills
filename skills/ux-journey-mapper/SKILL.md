@@ -148,4 +148,27 @@ Each journey generates:
 
 ## Attribution
 
+---
+
+## TrystPilot Skill Ecosystem Integration
+
+UX Journey Mapper is the discovery and planning phase of the TrystPilot design-to-code workflow. This skill feeds directly into wireframing and design systems:
+
+**Downstream (Output)**:
+- **ascii-mockup** (PR #49) — Use journey touchpoints to inform wireframe layouts and flows
+- **skill-creator** (#47) — Improve this and other skills
+
+**Peer Tools**:
+- **mermaid-terminal** (PR #TBD) — Visualize journey flows with swimlane diagrams
+- **project-status-tool** (PR #TBD) — Track journey iterations and versions
+
+**Complete Workflow**:
+```
+ux-journey-mapper → ascii-mockup → frontend-design → deployed experience
+```
+
+Generated journey maps drive wireframe decisions, touchpoint interactions, and emotional arc alignment in your design system. See PR #47 for the full ecosystem overview.
+
+---
+
 Created by [Fused Gaming](https://github.com/fused-gaming)
