@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { PreDeployValidator } from '../src/index.js';
-import { PreDeployConfig, ValidationResult } from '../src/types.js';
+import { PreDeployConfig } from '../src/types.js';
 
 describe('PreDeployValidator', () => {
   let validator: PreDeployValidator;
