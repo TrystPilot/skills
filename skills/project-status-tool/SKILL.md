@@ -369,6 +369,37 @@ status track-versions --include journey-maps/
 7. **Alert Thresholds**: Set up alerts when metrics cross critical thresholds
 8. **Milestone Tracking**: Keep roadmap in sync with actual progress
 
+---
+
+## TrystPilot Skill Ecosystem Integration
+
+Project Status Tool is the central dashboard and tracking hub for the TrystPilot ecosystem. This skill aggregates metrics and progress from all contributions:
+
+**Input Sources**:
+- **pre-deploy-validator** (PR #51) — Validation status and quality metrics
+- **ascii-mockup** (PR #49) — Design system version and component status
+- **ux-journey-mapper** (PR #50) — Journey map versions and iterations
+- **skill-creator** (#47) — Skill improvements and test coverage
+- **mermaid-terminal** (PR #52) — Architecture documentation status
+
+**Outputs**:
+- **Project Health Dashboard** — Unified view of all metrics
+- **Stakeholder Reports** — Markdown, HTML, and Slack-ready formats
+- **Trend Analysis** — Compare metrics across releases
+- **Milestone Tracking** — Progress toward project goals
+
+**Integration Pattern**:
+Automate collection via CI/CD. Generate status reports at release time. Track quality metrics across the entire TrystPilot contribution suite.
+
+Complete Status Flow:
+```
+all-skills → metrics-collection → project-status-tool → stakeholder-reports
+```
+
+See PR #47 for the full ecosystem overview.
+
+---
+
 ## Attribution
 
 Created by [Fused Gaming](https://github.com/fused-gaming)
