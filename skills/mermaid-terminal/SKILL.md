@@ -294,6 +294,29 @@ mermaid batch ./architecture --format markdown --output ./docs/architecture.md
 cat ./docs/architecture.md >> README.md
 ```
 
+---
+
+## TrystPilot Skill Ecosystem Integration
+
+Mermaid Terminal is the visualization engine for the TrystPilot ecosystem. This skill makes architecture, flows, and progress visible across all contributions:
+
+**Common Use Cases**:
+- **ux-journey-mapper** (PR #50) — Visualize journey flows as swimlane diagrams
+- **project-status-tool** (PR #TBD) — Generate milestone timelines and dependency graphs
+- **ascii-mockup** (PR #49) — Create component relationship diagrams
+- **pre-deploy-validator** (PR #51) — Visualize validation checks as flowcharts
+- **skill-creator** (#47) — Document skill workflows and pipelines
+
+**Peer Tools**:
+- All TrystPilot skills benefit from diagram visualization
+
+**Integration Pattern**:
+Generate Mermaid diagrams from skill outputs and embed in documentation, READMEs, and dashboards. Use batch export for CI/CD pipelines and automated diagram generation.
+
+See PR #47 for the full ecosystem overview.
+
+---
+
 ## Attribution
 
 Created by [Fused Gaming](https://github.com/fused-gaming)
